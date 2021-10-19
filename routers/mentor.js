@@ -1,5 +1,6 @@
 const express = require('express');
-const Mentor = require('../models/mentor')
+const Mentor = require('../models/mentor.js');
+
 const mentorRouter = express.Router();
 
 mentorRouter.post('/', async (req, res) => {
@@ -37,3 +38,5 @@ mentorRouter.get('/:id', async (req, res) => {
       .json({ error: true, message: "No hay este Mentor registrado en el sistema" });
   }
 })
+
+module.exports = mentorRouter ;

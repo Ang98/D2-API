@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 
 const { config } = require('./config/index.js');
 const mentorRouter = require('./routers/mentor.js');
+const mentoriaRouter = require('./routers/mentoria.js');
+const mentorizadoRouter = require('./routers/mentorizado.js');
+const hoja_vidaRouter = require('./routers/hoja_vida.js');
 
 const app = express();
 app.use(express.json());
@@ -21,7 +24,10 @@ mongoose.connection.on('connected', () => {
 app.use(morgan('tiny'));
 
 //Rutas
-app.use('/api', mentorRouter);
+app.use('/api/mentor', mentorRouter);
+app.use('/api/mentoria', mentoriaRouter);
+app.use('/api/mentorizado', mentorizadoRouter);
+app.use('/api/hoja', hoja_vidaRouter);
 
 app.get('/', (req, res) => {
   res.json('Server is ready');

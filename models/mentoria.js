@@ -1,4 +1,6 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+const express = require('express');
+
 
 const mentoriaSchema = new mongoose.Schema(
   {
@@ -18,5 +20,5 @@ const mentoriaSchema = new mongoose.Schema(
   }
 );
 
-const Mentoria = mongoose.model('Mentoria', userSchema);
-export default Mentoria;
+const Mentoria = mongoose.model('Mentoria', mentoriaSchema);
+module.exports = Mentoria ;

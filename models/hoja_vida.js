@@ -1,4 +1,6 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+const express = require('express');
+
 
 const hoja_vidaSchema = new mongoose.Schema(
   {
@@ -17,5 +19,5 @@ const hoja_vidaSchema = new mongoose.Schema(
   }
 );
 
-const Hoja_vida = mongoose.model('Hoja_vida', userSchema);
-export default Hoja_vida;
+const Hoja_vida = mongoose.model('Hoja_vida', hoja_vidaSchema);
+module.exports = Hoja_vida ;

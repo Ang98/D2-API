@@ -1,4 +1,6 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+const express = require('express');
+
 
 const mentorSchema = new mongoose.Schema(
   {
@@ -13,5 +15,5 @@ const mentorSchema = new mongoose.Schema(
   },
 );
 
-const Mentor = mongoose.model('Mentor', userSchema);
-export default Mentor;
+const Mentor = mongoose.model('Mentor', mentorSchema);
+module.exports = Mentor ;

@@ -1,5 +1,7 @@
 const express = require('express');
-const Hoja_vida = require('../models/hoja_vida')
+const Hoja_vida = require('../models/hoja_vida.js')
+
+
 const hvRouter = express.Router();
 
 hvRouter.post('/', async (req, res) => {
@@ -37,3 +39,5 @@ hvRouter.get('/:id', async (req, res) => {
       .json({ error: true, message: "No hay registrado en el sistema" });
   }
 })
+
+module.exports = hvRouter ;
